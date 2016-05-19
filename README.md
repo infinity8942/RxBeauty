@@ -2,23 +2,26 @@
 V 1.0
 
 ##项目结构
- * MVP框架
+ * 采用MVP框架
  * 使用Butterknife完成依赖注入
  * 使用Retrofit2+RxJava实现restful的http请求
  * 遵循Material Design规则
  
-##用到的开源技术
+##开源技术
 * [Butterknife](https://github.com/JakeWharton/butterknife)
 * [Retrofit](https://github.com/square/retrofit)
 * [RxJava](https://github.com/ReactiveX/RxJava)
 * [Fresco](https://github.com/facebook/fresco)
 * [LeakCanary](https://github.com/square/leakcanary)
 
-##截图
+##应用截图
 ![home](https://raw.githubusercontent.com/infinity8942/RxBeauty/master/screenshots/home.png)
 
 ##数据来源
 [天行数据](http://api.huceo.com/) 
+
+##TODO
+* 预览大图、过渡动画、保存
 
 ##联系方式
 邮箱：[infinity8942@foxmail.com](infinity8942@foxmail.com)
