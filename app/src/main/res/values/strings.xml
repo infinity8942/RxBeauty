@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RxBeauty</string>
+
+    <string name="action_settings">设置</string>
+    <string name="load_failed">加载失败</string>
+    <string name="retry">重试</string>
+    <string name="no_more_data">全部加载完啦！</string>
+
+</resources>

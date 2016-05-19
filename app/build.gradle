@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'// 编译时类
+
+def cfg = rootProject.ext.configuration // 配置
+def libs = rootProject.ext.libraries // 库
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+android {
+    compileSdkVersion cfg.compileVersion
+    buildToolsVersion cfg.buildToolsVersion
+
+    defaultConfig {
+        applicationId cfg.package
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.version_code
+        versionName cfg.version_name
+
+        buildConfigField "String", "BAIDU_APISTORE_PUBLIC_KEY", "\"${BAIDU_APISTORE}\""
+    }
+
+    signingConfigs {
+        release
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            if (signingConfigs.release != null) {
+                signingConfig signingConfigs.release
+            }
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "RxBeauty_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}_release.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+
+        debug {
+        }
+    }
+
+    lintOptions {
+        disable 'MissingTranslation', 'ExtraTranslation'
+        abortOnError false
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
+    productFlavors {
+        fir {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "fir"]
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:${libs.supportVersion}"
+    compile "com.android.support:support-v4:${libs.supportVersion}"
+    compile "com.android.support:design:${libs.supportVersion}"
+    compile "com.squareup.retrofit2:retrofit:${libs.retrofit}"
+    compile "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${libs.retrofit}"
+    compile "io.reactivex:rxjava:${libs.rxjava}"
+    compile "io.reactivex:rxandroid:${libs.rxandroid}"
+    debugCompile "com.squareup.leakcanary:leakcanary-android:${libs.leakcanary}"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
+    compile "com.jakewharton:butterknife:${libs.butterknife}"
+    apt "com.jakewharton:butterknife-compiler:${libs.butterknife}"
+    compile "com.google.code.gson:gson:${libs.gson}"
+    compile "com.facebook.fresco:fresco:${libs.fresco}"
+    compile "com.github.chrisbanes:PhotoView:${libs.photoview}"
+    compile 'com.umeng.analytics:analytics:latest.integration'
+}
