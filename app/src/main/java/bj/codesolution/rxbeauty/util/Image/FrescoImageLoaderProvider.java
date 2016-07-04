@@ -15,7 +15,7 @@ public class FrescoImageLoaderProvider extends BaseImageLoaderProvider {
         if (!TextUtils.isEmpty(loader.getUrl())) {
             loader.getImageView().setImageURI(Uri.parse(loader.getUrl()));
         } else if (loader.getPlaceHolder() != 0) {
-            loader.getImageView().setImageURI(Uri.parse(new StringBuffer("res://com.ovie.videochat/" + loader.getPlaceHolder()).toString()));
+            loader.getImageView().setImageURI(Uri.parse(new StringBuffer("res://bj.codesolution.rxbeauty/" + loader.getPlaceHolder()).toString()));
         }
 
     }

@@ -16,10 +16,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BeautyClient {
 
     private static BeautyRetrofit mBeautyRetrofit;
-    protected static final Object monitor = new Object();
+    private static final Object monitor = new Object();
     private static Retrofit retrofit;
 
-    public static final String HOST = "http://api.huceo.com/";
+    private static final String HOST = "http://api.huceo.com/";
     private static final int DEFAULT_TIMEOUT = 5;//second
 
     private BeautyClient() {
