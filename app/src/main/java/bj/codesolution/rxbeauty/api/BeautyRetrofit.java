@@ -8,9 +8,8 @@ import rx.Observable;
 /**
  * Created by Rylynn on 2016/5/18 0018.
  */
-public interface BeautyRetrofit {
+interface BeautyRetrofit {
 
     @GET("meinv/")
     Observable<BeautyData> getBeauty(@Query("key") String key, @Query("page") int page, @Query("num") int num);
-
 }

@@ -6,8 +6,8 @@ import java.io.Serializable;
  * Created by Rylynn on 2016/5/18 0018.
  */
 public class BaseData implements Serializable {
-    public int code;
-    public String msg;
+    private int code;
+    private String msg;
 
     public int getCode() {
         return code;

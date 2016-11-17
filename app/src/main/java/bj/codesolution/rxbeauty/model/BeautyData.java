@@ -8,7 +8,7 @@ import bj.codesolution.rxbeauty.model.entity.Beauty;
  * Created by Rylynn on 2016/5/18 0018.
  */
 public class BeautyData extends BaseData {
-    public List<Beauty> newslist;
+    private List<Beauty> newslist;
 
     public List<Beauty> getNewslist() {
         return newslist;

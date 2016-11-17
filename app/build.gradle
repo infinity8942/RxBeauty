@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'// 编译时类
 
 def cfg = rootProject.ext.configuration // 配置
 def libs = rootProject.ext.libraries // 库
@@ -13,9 +12,6 @@ buildscript {
         jcenter()
         mavenCentral()
         maven { url "https://jitpack.io" }
-    }
-    dependencies {
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
@@ -80,11 +76,11 @@ android {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "fir"]
         }
     }
+    buildToolsVersion '25.0.0'
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile "com.android.support:appcompat-v7:${libs.supportVersion}"
     compile "com.android.support:support-v4:${libs.supportVersion}"
     compile "com.android.support:design:${libs.supportVersion}"
@@ -97,7 +93,7 @@ dependencies {
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
     testCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
     compile "com.jakewharton:butterknife:${libs.butterknife}"
-    apt "com.jakewharton:butterknife-compiler:${libs.butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${libs.butterknife}"
     compile "com.google.code.gson:gson:${libs.gson}"
     compile "com.facebook.fresco:fresco:${libs.fresco}"
     compile "com.github.chrisbanes:PhotoView:${libs.photoview}"

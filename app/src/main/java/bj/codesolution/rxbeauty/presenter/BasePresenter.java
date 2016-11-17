@@ -9,11 +9,11 @@ import rx.Subscription;
  * Created by Rylynn on 2016/5/18 0018.
  */
 public abstract class BasePresenter<T extends BaseView> {
-    protected Subscription subscription;
+    Subscription subscription;
     protected Context context;
-    protected T iView;
+    T iView;
 
-    public BasePresenter(Context context, T iView) {
+    BasePresenter(Context context, T iView) {
         this.context = context;
         this.iView = iView;
     }
