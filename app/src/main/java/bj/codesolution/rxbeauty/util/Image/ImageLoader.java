@@ -60,6 +60,5 @@ public class ImageLoader {
         public ImageLoader build() {
             return new ImageLoader(this);
         }
-
     }
 }

@@ -12,14 +12,12 @@
 
     <application
         android:name=".App"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activity.MainActivity"
-            android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,14 +26,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activity.PhotoActivity" />
-
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="573c0d9867e58e4b24003015" />
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}" />
+        <activity
+            android:name=".ui.activity.PhotoActivity"
+            android:screenOrientation="portrait" />
     </application>
-
 </manifest>

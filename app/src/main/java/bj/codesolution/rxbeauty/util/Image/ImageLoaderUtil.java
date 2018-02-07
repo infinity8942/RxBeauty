@@ -12,6 +12,7 @@ public class ImageLoaderUtil {
 
     private ImageLoaderUtil() {
         mProvider = new FrescoImageLoaderProvider();
+//        mProvider = new GlideImageLoaderProvider();
     }
 
     public static ImageLoaderUtil getInstance() {
@@ -25,7 +26,6 @@ public class ImageLoaderUtil {
         }
         return mInstance;
     }
-
 
     public void loadImage(Context ctx, ImageLoader loader) {
         mProvider.loadImage(ctx, loader);

@@ -71,8 +71,6 @@ public class AutoLoadRecylerView extends RecyclerView {
 //                    isLoading = true;
 //                }
 //            }
-
         }
     }
-
 }

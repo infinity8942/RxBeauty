@@ -20,7 +20,7 @@ public class BeautyClient {
     private static Retrofit retrofit;
 
     private static final String HOST = "http://api.huceo.com/";
-    private static final int DEFAULT_TIMEOUT = 5;//second
+    private static final int DEFAULT_TIMEOUT = 10;//second
 
     private BeautyClient() {
     }

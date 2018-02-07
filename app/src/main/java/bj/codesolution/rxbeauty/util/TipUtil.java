@@ -8,7 +8,6 @@ import android.view.View;
  */
 public class TipUtil {
     private TipUtil() {
-
     }
 
     public static void showTipWithAction(View view, String tipText, String actionText, View.OnClickListener listener) {

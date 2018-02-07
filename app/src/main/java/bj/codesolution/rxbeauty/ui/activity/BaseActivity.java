@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.umeng.analytics.MobclickAgent;
-
 import butterknife.ButterKnife;
 
 /**
@@ -31,17 +29,5 @@ public abstract class BaseActivity extends AppCompatActivity {
                 onBackPressed();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        MobclickAgent.onPause(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        MobclickAgent.onResume(this);
     }
 }

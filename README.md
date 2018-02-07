@@ -20,9 +20,6 @@ V 1.0
 ##数据来源
 [天行数据](http://api.huceo.com/) 
 
-##TODO
-* 预览大图、过渡动画、保存
-
 ##联系方式
 邮箱：[infinity8942@foxmail.com](infinity8942@foxmail.com)
 
