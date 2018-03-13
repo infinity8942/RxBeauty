@@ -16,7 +16,7 @@ V 2.0
 * [LeakCanary](https://github.com/square/leakcanary)
 
 ##应用截图
-![home](https://raw.githubusercontent.com/infinity8942/RxBeauty/master/screenshots/home.png)
+![home](https://github.com/infinity8942/RxBeauty/blob/master/screenshots/home.png)
 
 ##数据来源
 [天行数据](http://api.huceo.com/) 
