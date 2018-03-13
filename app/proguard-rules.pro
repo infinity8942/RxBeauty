@@ -96,16 +96,6 @@ public *;
 -keepattributes EnclosingMethod
 -keep class sun.misc.Unsafe { *; }
 -keep class com.google.gson.stream.** { *; }
-# butterknife
--dontwarn butterknife.internal.**
--keep class butterknife.** { *; }
--keep class **$$ViewBinder { *; }
--keepclasseswithmembernames class * {
-           @butterknife.* <fields>;
-       }
--keepclasseswithmembernames class * {
-           @butterknife.* <methods>;
-       }
 # okhttp
 -dontwarn com.squareup.okhttp.**
 -dontwarn okio.**
@@ -141,3 +131,7 @@ public *;
 -keep class io.reactivex.**{*;}
 -keep class com.squareup.leakcanary.**{*;}
 -keep class com.android.support.**{*;}
+
+-keepclasseswithmembers class * extends android.databinding.ViewDataBinding{
+    <methods>;
+}

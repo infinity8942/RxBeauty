@@ -48,5 +48,4 @@ public class BeautyClient {
             return mBeautyRetrofit;
         }
     }
-
 }

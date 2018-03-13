@@ -1,17 +1,18 @@
 # RxBeauty
-V 1.0
+V 2.0
 
 ##项目结构
- * 采用MVP框架
- * 使用Butterknife完成依赖注入
- * 使用Retrofit2+RxJava实现restful的http请求
+ * 采用MVVM框架
+ * 使用Retrofit2+RxJava+DataBinding
  * 遵循Material Design规则
  
 ##开源技术
 * [Butterknife](https://github.com/JakeWharton/butterknife)
 * [Retrofit](https://github.com/square/retrofit)
 * [RxJava](https://github.com/ReactiveX/RxJava)
-* [Fresco](https://github.com/facebook/fresco)
+* [RxAndroid](https://github.com/ReactiveX/RxAndroid)
+* [RxPermissions](https://github.com/tbruyelle/RxPermissions)
+* [Glide](https://github.com/bumptech/glide)
 * [LeakCanary](https://github.com/square/leakcanary)
 
 ##应用截图
